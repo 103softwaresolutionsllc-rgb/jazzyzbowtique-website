@@ -121,7 +121,7 @@ export default function CheckoutPage({ onBack, initialCategory }: { onBack: () =
       </button>
 
       <div className="flex flex-row items-center justify-center gap-4 mb-10 w-full">
-        <img src="/logo.JPG" alt="Jazzyz Bowtique Logo" className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full shadow-md border-[3px] border-white shrink-0" />
+        <img src="/android-chrome-512x512.png" alt="Jazzyz Bowtique Logo" className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full shadow-md border-[3px] border-white shrink-0" />
         <h1 className="text-3xl md:text-5xl text-blue-accent font-display font-bold drop-shadow-sm whitespace-nowrap">
           Jazzyz Bowtique Checkout
         </h1>

@@ -550,7 +550,7 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-[1000] px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src="/logo.JPG" alt="Jazzyz Bowtique Logo" className="h-10 w-10 object-cover rounded-full shadow-sm border-2 border-white shrink-0" />
+          <img src="/apple-touch-icon.png" alt="Jazzyz Bowtique Logo" className="h-10 w-10 object-cover rounded-full shadow-sm border-2 border-white shrink-0" />
           <span className="font-display text-2xl text-blue-accent pt-1 whitespace-nowrap">
             Jazzyz Bowtique
           </span>
