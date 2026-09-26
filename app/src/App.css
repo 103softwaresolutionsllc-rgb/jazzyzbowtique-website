@@ -86,7 +86,13 @@ body::-webkit-scrollbar-thumb {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .section-pinned {
-    overflow-y: auto;
+    height: auto !important;
+    min-height: 100svh;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.5rem 0 2.5rem;
   }
   
   .hero-photo,
@@ -103,23 +109,52 @@ body::-webkit-scrollbar-thumb {
     position: relative !important;
     left: auto !important;
     top: auto !important;
-    width: 90% !important;
+    width: min(90vw, 420px) !important;
     height: auto !important;
     margin: 20px auto !important;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0;
+    /* Absolute children need a positioned box with real height from aspect-ratio */
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Fill the aspect-ratio frame — avoids 0-height imgs when parent is height:auto */
+  .hero-photo img,
+  .s2-card img,
+  .s3-photo img,
+  .s4-photo-top img,
+  .s4-photo-bottom img,
+  .s5-model img,
+  .s6-photo-1 img,
+  .s6-photo-2 img,
+  .s6-photo-3 img,
+  .s7-left img,
+  .s7-right img,
+  .contact-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   
   .hero-text-content,
   .s2-text,
   .s3-text,
   .s4-card,
+  .s5-caption,
   .s6-text {
     position: relative !important;
     left: auto !important;
     top: auto !important;
-    width: 90% !important;
+    width: min(90vw, 520px) !important;
+    height: auto !important;
     margin: 20px auto !important;
     text-align: center;
+    transform: none !important;
+    opacity: 1 !important;
   }
   
   .hero-ribbon,
@@ -143,8 +178,10 @@ body::-webkit-scrollbar-thumb {
     position: relative !important;
     left: auto !important;
     top: auto !important;
-    width: 40% !important;
+    width: min(40vw, 180px) !important;
     margin: 20px auto !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
   
   .s5-banner {
@@ -157,17 +194,33 @@ body::-webkit-scrollbar-thumb {
     padding: 40px 20px;
     transform: none !important;
     margin: 20px 0;
+    opacity: 1 !important;
   }
   
   .s4-card {
     height: auto !important;
     min-height: 400px;
   }
+
+  .s7-text {
+    position: absolute !important;
+    inset: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
   
   .s6-photo-1,
   .s6-photo-2,
   .s6-photo-3 {
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .contact-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

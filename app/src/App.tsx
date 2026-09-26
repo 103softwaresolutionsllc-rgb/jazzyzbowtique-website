@@ -29,6 +29,45 @@ function App() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      // Mobile / tablet: keep photos visible. Desktop pin/scrub sets opacity via
+      // scroll progress and leaves many images invisible in the stacked layout.
+      mm.add('(max-width: 1024px)', () => {
+        const animatedEls = [
+          '.hero-photo', '.hero-ribbon', '.hero-bow', '.hero-text-content',
+          '.hero-headline span', '.hero-subtext', '.hero-cta',
+          '.s2-card', '.s2-ribbon', '.s2-bow', '.s2-text',
+          '.s3-photo', '.s3-ribbon', '.s3-bow', '.s3-text',
+          '.s4-photo-top', '.s4-photo-bottom', '.s4-ribbon', '.s4-bow', '.s4-card',
+          '.s5-banner', '.s5-model', '.s5-bow', '.s5-right-ribbon', '.s5-caption',
+          '.s6-photo-1', '.s6-photo-2', '.s6-photo-3', '.s6-ribbon', '.s6-bow', '.s6-text',
+          '.s7-left', '.s7-right', '.s7-ribbon', '.s7-bow', '.s7-text',
+          '.contact-content', '.contact-image',
+        ].join(', ');
+
+        gsap.set(animatedEls, {
+          clearProps: 'all',
+          opacity: 1,
+          x: 0,
+          y: 0,
+          scale: 1,
+          rotate: 0,
+        });
+
+        gsap.from('.hero-photo, .hero-text-content', {
+          opacity: 0,
+          y: 20,
+          duration: 0.65,
+          stagger: 0.12,
+          ease: 'power2.out',
+          delay: 0.15,
+          clearProps: 'all',
+        });
+      });
+
+      // Desktop: full pin / scrub experience
+      mm.add('(min-width: 1025px)', () => {
       // Hero entrance animation
       const heroTl = gsap.timeline({ delay: 0.3 });
       
@@ -523,6 +562,7 @@ function App() {
           }
         });
       }
+      }); // end desktop matchMedia
     });
 
     return () => ctx.revert();
@@ -862,7 +902,7 @@ function App() {
         </div>
         
         {/* Caption */}
-        <div className="absolute left-[6vw] top-[74vh] w-[40vw]">
+        <div className="s5-caption absolute left-[6vw] top-[74vh] w-[40vw]">
           <p className="text-gray-700 leading-relaxed font-bold">
             Orders of 12 items or more qualify for wholesale!
           </p>
@@ -1082,13 +1122,13 @@ function App() {
             </div>
           </div>
           
-          {/* Image */}
-          <div className="contact-image hidden lg:block">
-            <div className="w-full h-[52vh] photo-card overflow-hidden">
+          {/* Image — show on mobile too so contact photo isn't missing */}
+          <div className="contact-image w-full max-w-md mx-auto lg:max-w-none">
+            <div className="relative w-full aspect-[3/4] photo-card overflow-hidden">
               <img 
                 src="/contact_image.jpg" 
                 alt="Contact" 
-                className="w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
             </div>
           </div>
