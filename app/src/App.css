@@ -167,7 +167,7 @@ body::-webkit-scrollbar-thumb {
   .s6-photo-1,
   .s6-photo-2,
   .s6-photo-3 {
-    aspect-ratio: 16/10;
+    aspect-ratio: 1/1;
   }
 }
 

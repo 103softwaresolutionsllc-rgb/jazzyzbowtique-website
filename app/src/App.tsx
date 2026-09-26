@@ -624,7 +624,7 @@ function App() {
           <img 
             src="/hero_model.jpg" 
             alt="Fashion model with bow" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -676,7 +676,7 @@ function App() {
           <img 
             src="/newcollection.jpg" 
             alt="New collection" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -732,7 +732,7 @@ function App() {
           <img 
             src="/trendybow.jpg" 
             alt="Trendy bow fashion" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -774,21 +774,21 @@ function App() {
 
       {/* Section 4: Fashion Sale */}
       <section ref={section4Ref} className="section-pinned bg-pink-primary z-40">
-        {/* Top Left Photo */}
-        <div className="s4-photo-top absolute left-[6vw] top-[10vh] w-[26vw] h-[34vh] photo-card overflow-hidden">
+        {/* Left Photo (Full Portrait View) */}
+        <div className="s4-photo-top absolute left-[5vw] top-[10vh] w-[18vw] h-[68vh] photo-card overflow-hidden rounded-2xl shadow-xl z-10 -rotate-2 hover:rotate-0 transition-transform">
           <img 
             src="/sale_look_a.jpg" 
             alt="Sale look 1" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
-        {/* Bottom Left Photo */}
-        <div className="s4-photo-bottom absolute left-[6vw] top-[54vh] w-[26vw] h-[36vh] photo-card overflow-hidden">
+        {/* Right Photo (Full Portrait View) */}
+        <div className="s4-photo-bottom absolute left-[20vw] top-[16vh] w-[18vw] h-[68vh] photo-card overflow-hidden rounded-2xl shadow-xl z-20 rotate-2 hover:rotate-0 transition-transform">
           <img 
             src="/sale_look_b.jpg" 
             alt="Sale look 2" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -886,7 +886,7 @@ function App() {
           <img 
             src="/exclusive_model.jpg" 
             alt="Exclusive model" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -901,30 +901,30 @@ function App() {
 
       {/* Section 6: Stylish Bows Gallery */}
       <section ref={section6Ref} className="section-pinned bg-pink-primary z-[60]">
-        {/* Top Photo */}
-        <div className="s6-photo-1 absolute left-[7vw] top-[8vh] w-[40vw] h-[26vh] photo-card overflow-hidden">
+        {/* Top Left Photo */}
+        <div className="s6-photo-1 absolute left-[5vw] top-[8vh] w-[21vw] aspect-square photo-card overflow-hidden rounded-2xl shadow-xl z-10">
           <img 
             src="/gallery_a.jpg" 
             alt="Gallery 1" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         
-        {/* Middle Photo */}
-        <div className="s6-photo-2 absolute left-[7vw] top-[38vh] w-[40vw] h-[26vh] photo-card overflow-hidden">
+        {/* Top Right Photo */}
+        <div className="s6-photo-2 absolute left-[21vw] top-[22vh] w-[21vw] aspect-square photo-card overflow-hidden rounded-2xl shadow-xl z-20">
           <img 
             src="/gallery_b.jpg" 
             alt="Gallery 2" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         
         {/* Bottom Photo */}
-        <div className="s6-photo-3 absolute left-[7vw] top-[68vh] w-[40vw] h-[26vh] photo-card overflow-hidden">
+        <div className="s6-photo-3 absolute left-[7vw] top-[46vh] w-[21vw] aspect-square photo-card overflow-hidden rounded-2xl shadow-xl z-30">
           <img 
             src="/gallery_c.jpg" 
             alt="Gallery 3" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         
@@ -981,7 +981,7 @@ function App() {
           <img 
             src="/latest_left.jpg" 
             alt="Latest collection left" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         
@@ -998,7 +998,7 @@ function App() {
           <img 
             src="/latest_right.jpg" 
             alt="Latest collection right" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           {/* Overlay Text */}
           <div className="s7-text absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-8">
@@ -1088,7 +1088,7 @@ function App() {
               <img 
                 src="/contact_image.jpg" 
                 alt="Contact" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
