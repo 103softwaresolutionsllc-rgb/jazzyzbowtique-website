@@ -164,10 +164,7 @@ body::-webkit-scrollbar-thumb {
   .s5-banner,
   .s5-right-ribbon,
   .s6-ribbon,
-  .s7-ribbon {
-    display: none !important;
-  }
-  
+  .s7-ribbon,
   .hero-bow,
   .s2-bow,
   .s3-bow,
@@ -175,13 +172,7 @@ body::-webkit-scrollbar-thumb {
   .s5-bow,
   .s6-bow,
   .s7-bow {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    width: min(40vw, 180px) !important;
-    margin: 20px auto !important;
-    transform: none !important;
-    opacity: 1 !important;
+    display: none !important;
   }
   
   .s5-banner {
